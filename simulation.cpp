@@ -50,7 +50,7 @@ void updateLines(int time, LinkedList &shopperList, vector<Queue> &queues) {
     // Checks to see if anyone is ready to leave the checkouts
     for (Queue &queue: queues) {
         queueNodeData tempData = queue.peek();
-        while (tempData.timeAvailable <= time) {
+        while (!queue.queueIsEmpty() && tempData.timeAvailable <= time) {
             queue.lineData.queueCount--;
             queue.lineData.currItems -= tempData.itemCount;
             queue.deQueue();
