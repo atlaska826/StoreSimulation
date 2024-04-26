@@ -5,7 +5,7 @@ LinkedList::LinkedList() {
 }
 
 void LinkedList::addElement(listType d) {
-    Node* newNode = new Node;
+    Node *newNode = new Node;
     newNode->data = d;
     newNode->nextPtr = nullptr;
 
@@ -15,7 +15,7 @@ void LinkedList::addElement(listType d) {
         newNode->nextPtr = headPtr;
         headPtr = newNode;
     } else {
-        Node* tempNode = headPtr;
+        Node *tempNode = headPtr;
         while (tempNode->nextPtr != nullptr &&
                tempNode->nextPtr->data.enterQTime < newNode->data.enterQTime) {
             tempNode = tempNode->nextPtr;
@@ -27,7 +27,7 @@ void LinkedList::addElement(listType d) {
 
 void LinkedList::delElement() {
     if (!listIsEmpty()) {
-        Node* tempNode = headPtr;
+        Node *tempNode = headPtr;
         headPtr = headPtr->nextPtr;
         delete tempNode;
         tempNode = nullptr;
@@ -47,8 +47,8 @@ bool LinkedList::listIsEmpty() {
 }
 
 void LinkedList::printList() {
-    Node* tempNode = headPtr;
-    while (tempNode != nullptr){
+    Node *tempNode = headPtr;
+    while (tempNode != nullptr) {
         cout << "CART #" << tempNode->data.cartID
              << " -- Item Count: " << tempNode->data.itemCount
              << " -- Enter Queue Time: " << tempNode->data.enterQTime

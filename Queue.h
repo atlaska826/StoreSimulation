@@ -31,11 +31,16 @@ private:
 
 public:
     Queue();
+
     queueData lineData;
 
     void enQueue(queueNodeData d);
+
     queueNodeData deQueue();
+
     queueNodeData peek();
+
     bool queueIsEmpty();
+
     void printQueue();
 };

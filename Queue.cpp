@@ -6,7 +6,7 @@ Queue::Queue() {
 }
 
 void Queue::enQueue(queueNodeData d) {
-    queueNode* newNode = new queueNode;
+    queueNode *newNode = new queueNode;
     newNode->data = d;
     newNode->nextPtr = nullptr;
 
@@ -22,7 +22,7 @@ void Queue::enQueue(queueNodeData d) {
 queueNodeData Queue::deQueue() {
     queueNodeData tempData;
     if (!queueIsEmpty()) {
-        queueNode* tempNode = front;
+        queueNode *tempNode = front;
         front = front->nextPtr;
 
         if (queueIsEmpty()) {
@@ -47,7 +47,7 @@ bool Queue::queueIsEmpty() {
 }
 
 void Queue::printQueue() {
-    queueNode* tempNode = front;
+    queueNode *tempNode = front;
     while (tempNode != nullptr) {
         cout << tempNode->data.itemCount << " " << tempNode->data.timeAvailable << endl;
         tempNode = tempNode->nextPtr;

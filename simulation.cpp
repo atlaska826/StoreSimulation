@@ -6,7 +6,7 @@ void customerArrival(int time, int &idNum, LinkedList &shopperList) {
     // Generates random number of customers to arrive at the store
     int numCustomers = rand() % (3 - 1) + 2;
 
-    int itemPercent, itemTime;
+    int itemPercent;
     listType tempShopper;
 
     // Updates customer data and adds them to Linked List
@@ -43,11 +43,12 @@ void customerArrival(int time, int &idNum, LinkedList &shopperList) {
 }
 
 void updateLines(int time, LinkedList &shopperList, vector<Queue> &queues) {
-// PRE: FIXME
-// POST: FIXME
+// PRE: Takes in current time, the shopper list, and the vector of Queue objects
+// POST: Checks the shopper list and each queue to see if any customers need to be moved in or out of them and updates
+//       the object's data accordingly
 
     // Checks to see if anyone is ready to leave the checkouts
-    for (Queue& queue : queues) {
+    for (Queue &queue: queues) {
         queueNodeData tempData = queue.peek();
         while (tempData.timeAvailable <= time) {
             queue.lineData.queueCount--;
@@ -108,7 +109,7 @@ void updateLines(int time, LinkedList &shopperList, vector<Queue> &queues) {
     }
 
     // Update all queue statistics
-    for (Queue &queue : queues) {
+    for (Queue &queue: queues) {
         queueData data = queue.lineData;
 
         // Updates totalIdleTime

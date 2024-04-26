@@ -9,17 +9,10 @@ using namespace std;
 
 int LinkedList::listCount = 0;
 
-bool allQueuesEmpty(const vector<Queue> &queues) {
-    for (Queue queue : queues) {
-        if (!queue.queueIsEmpty()) {
-            return false;
-        }
-    }
-    return true;
-}
+bool allQueuesEmpty(const vector<Queue> &queues);
 
 int main() {
-    srand(1);
+    srand(time(0));
     LinkedList shopperList;
     vector<Queue> queues;
     int numLines, idNum = 1;
@@ -63,4 +56,13 @@ int main() {
     outputReport(queues);
 
     return 0;
+}
+
+bool allQueuesEmpty(const vector<Queue> &queues) {
+    for (Queue queue: queues) {
+        if (!queue.queueIsEmpty()) {
+            return false;
+        }
+    }
+    return true;
 }

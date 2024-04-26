@@ -23,9 +23,13 @@ public:
     LinkedList();
 
     void addElement(listType d);
+
     void delElement();
+
     listType peek();
+
     bool listIsEmpty();
+
     void printList();
 
     static int listCount; // Number of carts currently in the list
